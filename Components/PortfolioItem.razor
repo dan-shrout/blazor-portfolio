@@ -1,0 +1,40 @@
+<article class="portfolio-card">
+    <h3>@App.Title</h3>
+
+    <div class="portfolio-card-row">
+        <img class="app-icon" src="@App.Icon" alt="@App.Title app icon" />
+        @if (App.UsesReactNative)
+        {
+            <div class="tech-icons">
+                <img src="images/react-native-icon.png" alt="React Native" />
+                <img src="images/expo-icon.png" alt="Expo" />
+            </div>
+        }
+    </div>
+
+    @if (App.IsPublished)
+    {
+        <div class="store-links">
+            @if (App.AppStoreUrl is not null)
+            {
+                <a href="@App.AppStoreUrl" target="_blank" rel="noopener noreferrer">
+                    <img src="images/store-badges/app-store.png" alt="Download on the App Store" />
+                </a>
+            }
+            @if (App.GooglePlayUrl is not null)
+            {
+                <a href="@App.GooglePlayUrl" target="_blank" rel="noopener noreferrer">
+                    <img src="images/store-badges/google-play.png" alt="Get it on Google Play" />
+                </a>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="deprecated">This app is no longer available.</p>
+    }
+</article>
+
+@code {
+    [Parameter, EditorRequired] public AppProject App { get; set; } = default!;
+}

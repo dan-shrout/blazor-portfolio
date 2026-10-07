@@ -1,0 +1,8 @@
+<div class="skill-item">
+    <img src="@Skill.Icon" alt="" />
+    <span>@Skill.Name</span>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public Skill Skill { get; set; } = default!;
+}

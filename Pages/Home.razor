@@ -1,0 +1,23 @@
+@page "/"
+@using PortfolioSite.Data
+
+<PageTitle>@PortfolioData.Name</PageTitle>
+
+<section class="home">
+    <div class="home-intro">
+        <h1>@PortfolioData.Name</h1>
+        <p class="home-title">Mobile Developer</p>
+    </div>
+
+    <div class="home-bottom">
+        <div class="social-links">
+            <a href="@PortfolioData.LinkedInUrl" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="images/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="@PortfolioData.GitHubUrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github.png" alt="GitHub" />
+            </a>
+        </div>
+        <p class="built-with">This website was built with ASP.NET Core Blazor.</p>
+    </div>
+</section>

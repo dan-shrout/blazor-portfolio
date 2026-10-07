@@ -1,0 +1,139 @@
+:root {
+    --bg: #000;
+    --surface: #111;
+    --border: #222;
+    --text: #fff;
+    --text-muted: #ccc;
+    --text-dim: #888;
+    --card-bg: #fff;
+    --card-text: #111;
+    --accent: #4da3ff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--accent); }
+
+h1:focus { outline: none; }
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+}
+.site-header nav { display: flex; }
+.site-header a {
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-muted);
+}
+.site-header a.active { color: var(--text); text-decoration: underline; }
+
+.page {
+    min-height: calc(100vh - 70px);
+    padding: 0 24px 24px;
+}
+
+/* Home */
+.home {
+    min-height: calc(100vh - 94px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.home h1 { font-size: 40px; font-weight: 400; margin: 0; }
+.home-title { font-size: 25px; margin: 4px 0 0; }
+.social-links { display: flex; align-items: center; }
+.social-links img { height: 60px; width: 60px; display: block; }
+.built-with { text-align: center; margin: 12px 0 0; }
+
+/* About */
+.about { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.profile-row { display: flex; align-items: center; gap: 20px; }
+.profile-image {
+    height: 110px; width: 110px; border-radius: 50%;
+    border: 2px solid #333; object-fit: cover;
+}
+.about h1 { font-size: 26px; font-weight: 700; margin: 0 0 4px; }
+.about h2 { font-size: 22px; font-weight: 600; margin: 0; }
+.role { color: #aaa; font-size: 16px; font-weight: 500; margin: 0 0 4px; }
+.experience { color: #666; font-size: 14px; margin: 0; }
+.bio { color: var(--text-muted); font-size: 17px; line-height: 1.55; margin: 0; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-item {
+    width: 100px; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 8px;
+}
+.skill-item img { height: 48px; width: 48px; object-fit: contain; }
+.skill-item span { font-size: 13px; color: #ddd; text-align: center; }
+
+/* Work */
+.work h1 { font-size: 30px; font-weight: 400; text-align: center; margin: 24px 0 8px; }
+.portfolio-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+.portfolio-card {
+    width: 400px; max-width: 100%; margin: 16px;
+    background: var(--card-bg); color: var(--card-text);
+    border-radius: 16px; padding: 20px;
+    display: flex; flex-direction: column; gap: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+.portfolio-card h3 { font-size: 22px; font-weight: 600; margin: 0; }
+.portfolio-card-row { display: flex; align-items: center; gap: 24px; }
+.app-icon {
+    height: 120px; width: 120px; border-radius: 28px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); object-fit: cover;
+}
+.tech-icons { display: flex; align-items: center; gap: 12px; }
+.tech-icons img { height: 56px; width: 56px; object-fit: contain; }
+.store-links { display: flex; gap: 12px; }
+.store-links a { border-radius: 8px; overflow: hidden; transition: opacity 0.15s; }
+.store-links a:hover { opacity: 0.65; }
+.store-links img { height: 100px; width: 100px; object-fit: contain; display: block; }
+.deprecated { color: var(--text-dim); font-size: 14px; font-style: italic; margin: 0; }
+
+@media (max-width: 520px) {
+    .home h1 { font-size: 32px; }
+    .work h1 { font-size: 24px; }
+    .portfolio-card { margin: 12px 0; }
+    .store-links img { height: 120px; width: 120px; }
+}
+
+/* Blazor chrome */
+#blazor-error-ui {
+    background: lightyellow; color: #000;
+    bottom: 0; box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none; left: 0; padding: 0.6rem 1.25rem 0.7rem;
+    position: fixed; width: 100%; z-index: 1000;
+}
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.75rem; top: 0.5rem; }
+
+.loading-progress {
+    position: relative; display: block; width: 8rem; height: 8rem; margin: 20vh auto 1rem auto;
+}
+.loading-progress circle {
+    fill: none; stroke: #333; stroke-width: 0.6rem;
+    transform-origin: 50% 50%; transform: rotate(-90deg);
+}
+.loading-progress circle:last-child {
+    stroke: var(--accent);
+    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+    transition: stroke-dasharray 0.05s ease-in-out;
+}
+.loading-progress-text {
+    position: absolute; text-align: center; font-weight: bold; inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+.loading-progress-text:after {
+    content: var(--blazor-load-percentage-text, "Loading");
+}

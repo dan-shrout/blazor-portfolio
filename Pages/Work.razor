@@ -1,0 +1,22 @@
+@page "/work"
+@using PortfolioSite.Data
+
+<PageTitle>Work · @PortfolioData.Name</PageTitle>
+
+<section class="work">
+    <h1>Production apps I've built using React Native &amp; Expo</h1>
+    <div class="portfolio-grid">
+        @foreach (var app in PortfolioData.ReactNativeApps)
+        {
+            <PortfolioItem App="app" />
+        }
+    </div>
+
+    <h1>Native Android and iOS apps I've contributed to in production</h1>
+    <div class="portfolio-grid">
+        @foreach (var app in PortfolioData.NativeApps)
+        {
+            <PortfolioItem App="app" />
+        }
+    </div>
+</section>

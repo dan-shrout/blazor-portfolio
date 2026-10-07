@@ -1,0 +1,25 @@
+@page "/about"
+@using PortfolioSite.Data
+
+<PageTitle>About · @PortfolioData.Name</PageTitle>
+
+<section class="about">
+    <div class="profile-row">
+        <img class="profile-image" src="images/profile.jpeg" alt="Photo of @PortfolioData.Name" />
+        <div>
+            <h1>@PortfolioData.Name</h1>
+            <p class="role">Software Engineer</p>
+            <p class="experience">10+ Years Experience</p>
+        </div>
+    </div>
+
+    <p class="bio">@PortfolioData.Bio</p>
+
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        @foreach (var skill in PortfolioData.Skills)
+        {
+            <SkillItem Skill="skill" />
+        }
+    </div>
+</section>

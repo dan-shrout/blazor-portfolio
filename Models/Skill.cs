@@ -1,0 +1,3 @@
+namespace PortfolioSite.Models;
+
+public record Skill(string Name, string Icon);
