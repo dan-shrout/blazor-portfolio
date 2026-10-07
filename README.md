@@ -1,6 +1,6 @@
 # Dan Shrout Portfolio — ASP.NET Core Blazor
 
-A Blazor WebAssembly (.NET 8) port of the Expo / React Native portfolio site in the repo root.
+A Blazor WebAssembly (.NET 10) port of the Expo / React Native portfolio site in the repo root.
 It builds to static files, so it can be hosted anywhere (GitHub Pages, Firebase Hosting, Azure Static Web Apps).
 
 ## Structure
