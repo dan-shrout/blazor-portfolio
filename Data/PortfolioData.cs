@@ -6,7 +6,7 @@ public static class PortfolioData
 {
     public const string Name = "Dan Shrout";
     public const string LinkedInUrl = "https://www.linkedin.com/in/dan-shrout/";
-    public const string GitHubUrl = "https://github.com/Schraut";
+    public const string GitHubUrl = "https://github.com/dan-shrout";
 
     public const string Bio =
         "I'm a software engineer with over 10 years of experience specializing in mobile and web development. " +
