@@ -1,15 +1,21 @@
 <article class="portfolio-card">
-    <h3>@App.Title</h3>
-
-    <div class="portfolio-card-row">
-        <img class="app-icon" src="@App.Icon" alt="@App.Title app icon" />
-        @if (App.UsesReactNative)
-        {
-            <div class="tech-icons">
-                <img src="images/react-native-icon.png" alt="React Native" />
-                <img src="images/expo-icon.png" alt="Expo" />
+    <div class="portfolio-card-head">
+        <img class="app-icon" src="@App.Icon" alt="@App.Title app icon" loading="lazy" />
+        <div class="portfolio-card-title">
+            <h3>@App.Title</h3>
+            <div class="chips">
+                @if (App.UsesReactNative)
+                {
+                    <span class="chip">React Native</span>
+                    <span class="chip">Expo</span>
+                }
+                else
+                {
+                    <span class="chip">iOS</span>
+                    <span class="chip">Android</span>
+                }
             </div>
-        }
+        </div>
     </div>
 
     @if (App.IsPublished)
@@ -31,7 +37,7 @@
     }
     else
     {
-        <p class="deprecated">This app is no longer available.</p>
+        <p class="deprecated">No longer available</p>
     }
 </article>
 

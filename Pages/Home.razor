@@ -1,23 +1,35 @@
 @page "/"
 @using PortfolioSite.Data
 
-<PageTitle>@PortfolioData.Name</PageTitle>
+<PageTitle>@PortfolioData.Name · Mobile Developer</PageTitle>
 
-<section class="home">
-    <div class="home-intro">
-        <h1>@PortfolioData.Name</h1>
-        <p class="home-title">Mobile Developer</p>
-    </div>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span class="gradient-text">@PortfolioData.Name</span></h1>
+        <p class="hero-role">Mobile Developer</p>
+        <p class="hero-summary">
+            I build production iOS, Android, and React Native apps, and I've taken products from zero to
+            release. 10+ years of experience across mobile and web.
+        </p>
 
-    <div class="home-bottom">
+        <div class="hero-actions">
+            <NavLink class="btn btn-primary" href="work">View my work</NavLink>
+            <NavLink class="btn btn-ghost" href="about">About me</NavLink>
+        </div>
+
         <div class="social-links">
-            <a href="@PortfolioData.LinkedInUrl" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <img src="images/linkedin.png" alt="LinkedIn" />
+            <a href="@PortfolioData.LinkedInUrl" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <img src="images/linkedin.png" alt="" />
             </a>
-            <a href="@PortfolioData.GitHubUrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <img src="images/github.png" alt="GitHub" />
+            <a href="@PortfolioData.GitHubUrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                <img src="images/github.png" alt="" />
             </a>
         </div>
-        <p class="built-with">This website was built with ASP.NET Core Blazor.</p>
+    </div>
+
+    <div class="hero-visual">
+        <div class="avatar-ring">
+            <img src="images/profile.jpeg" alt="Photo of @PortfolioData.Name" />
+        </div>
     </div>
 </section>

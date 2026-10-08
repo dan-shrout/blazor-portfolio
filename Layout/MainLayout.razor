@@ -1,13 +1,29 @@
 @inherits LayoutComponentBase
+@using PortfolioSite.Data
+
+<div class="bg-glow" aria-hidden="true"></div>
 
 <header class="site-header">
-    <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
-    <nav>
-        <NavLink href="about">About</NavLink>
-        <NavLink href="work">Work</NavLink>
-    </nav>
+    <div class="container header-inner">
+        <NavLink class="brand" href="" Match="NavLinkMatch.All">
+            <span class="brand-mark">DS</span>
+            <span class="brand-name">@PortfolioData.Name</span>
+        </NavLink>
+        <nav class="nav">
+            <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
+            <NavLink href="about">About</NavLink>
+            <NavLink href="work">Work</NavLink>
+        </nav>
+    </div>
 </header>
 
-<main class="page">
+<main class="container page">
     @Body
 </main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>&copy; @DateTime.Now.Year @PortfolioData.Name</span>
+        <span>Built with ASP.NET Core Blazor</span>
+    </div>
+</footer>

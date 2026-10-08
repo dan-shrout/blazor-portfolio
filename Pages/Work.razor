@@ -4,19 +4,36 @@
 <PageTitle>Work · @PortfolioData.Name</PageTitle>
 
 <section class="work">
-    <h1>Production apps I've built using React Native &amp; Expo</h1>
-    <div class="portfolio-grid">
-        @foreach (var app in PortfolioData.ReactNativeApps)
-        {
-            <PortfolioItem App="app" />
-        }
+    <header class="page-heading">
+        <h1>My <span class="gradient-text">work</span></h1>
+        <p>Apps I've shipped to the App Store and Google Play.</p>
+    </header>
+
+    <div class="work-group">
+        <h2 class="section-title">
+            React Native &amp; Expo
+            <span class="count">@PortfolioData.ReactNativeApps.Count</span>
+        </h2>
+        <p class="section-sub">Production apps I've built.</p>
+        <div class="portfolio-grid">
+            @foreach (var app in PortfolioData.ReactNativeApps)
+            {
+                <PortfolioItem App="app" />
+            }
+        </div>
     </div>
 
-    <h1>Native Android and iOS apps I've contributed to in production</h1>
-    <div class="portfolio-grid">
-        @foreach (var app in PortfolioData.NativeApps)
-        {
-            <PortfolioItem App="app" />
-        }
+    <div class="work-group">
+        <h2 class="section-title">
+            Native iOS &amp; Android
+            <span class="count">@PortfolioData.NativeApps.Count</span>
+        </h2>
+        <p class="section-sub">Production apps I've contributed to.</p>
+        <div class="portfolio-grid">
+            @foreach (var app in PortfolioData.NativeApps)
+            {
+                <PortfolioItem App="app" />
+            }
+        </div>
     </div>
 </section>

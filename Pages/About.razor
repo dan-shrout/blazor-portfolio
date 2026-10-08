@@ -4,22 +4,42 @@
 <PageTitle>About · @PortfolioData.Name</PageTitle>
 
 <section class="about">
-    <div class="profile-row">
+    <div class="card profile-card">
         <img class="profile-image" src="images/profile.jpeg" alt="Photo of @PortfolioData.Name" />
         <div>
             <h1>@PortfolioData.Name</h1>
             <p class="role">Software Engineer</p>
-            <p class="experience">10+ Years Experience</p>
+            <p class="experience">10+ years experience</p>
         </div>
     </div>
 
-    <p class="bio">@PortfolioData.Bio</p>
+    <div class="stats">
+        <div class="stat">
+            <span class="stat-value">10+</span>
+            <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">@(PortfolioData.ReactNativeApps.Count + PortfolioData.NativeApps.Count)</span>
+            <span class="stat-label">Production apps</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">@PortfolioData.Skills.Count</span>
+            <span class="stat-label">Technologies</span>
+        </div>
+    </div>
 
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        @foreach (var skill in PortfolioData.Skills)
-        {
-            <SkillItem Skill="skill" />
-        }
+    <div class="card">
+        <h2 class="section-title">My story</h2>
+        <p class="bio">@PortfolioData.Bio</p>
+    </div>
+
+    <div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            @foreach (var skill in PortfolioData.Skills)
+            {
+                <SkillItem Skill="skill" />
+            }
+        </div>
     </div>
 </section>
